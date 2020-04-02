@@ -1,0 +1,13 @@
+.column__container {
+  width: 25rem;
+  margin-right: 1rem;
+  padding: 3em 1em;
+  background-color: #FFFAFA;
+}
+
+@media screen and (max-width: 900px) {
+  .column__container {
+    width: 100%;
+    margin-right: 0;
+  }
+}

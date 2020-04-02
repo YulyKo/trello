@@ -1,9 +1,29 @@
 @import "~normalize.css";
+/* no var(), because it doesn't supports in many browsers*/
+
+/* generate colors:
+blue: #000046;
+white: #FCFDFF
+light-gray: #9D9599
+*/
+
+.app{
+  height: 100vh;
+  transition: 0.5s;
+  background: #000046;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(106deg, #000046, #1CB5E0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(106deg, #000046, #1CB5E0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 .text {
-  font-family: 'Baloo Thambi 2', cursive;
+  margin: 0;
+  color: #FCFDFF;
   text-align: center;
   font-size: calc(10px + 2vmin);
 }
 
-@media (prefers-reduced-motion: no-preference) {}
+@media screen and (max-width: 900px) {
+  .app {
+
+  }
+}
