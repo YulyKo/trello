@@ -11,8 +11,7 @@ const Columns = () => {
 
   return (
     <main className="columns">
-      {LIST
-      }
+      {LIST}
       <button onClick={onAddBtnClick}>Add column</button>
     </main>
   );
