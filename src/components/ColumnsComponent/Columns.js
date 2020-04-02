@@ -1,16 +1,21 @@
-import * as React from "react";
-import Column from "../ColumnComponent/Column";
+import React, {useState} from "react";
 import "./_Clolumns.css"
-import AddingComponent from "../AddingComponent/AddingComponent";
+import Column from "../ColumnComponent/Column";
 
-class Columns extends React.Component {
-  render() {
-    return (
-      <main className="columns">
-        <AddingComponent nameList={Column} name="Column"/>
-      </main>
-    );
-  }
-}
+const Columns = () => {
+  const [LIST, SET_LIST] = useState([]);
+
+  const onAddBtnClick = event => {
+    SET_LIST(LIST.concat(<Column key={LIST.length}/>))
+  };
+
+  return (
+    <main className="columns">
+      {LIST
+      }
+      <button onClick={onAddBtnClick}>Add column</button>
+    </main>
+  );
+};
 
 export default Columns;
