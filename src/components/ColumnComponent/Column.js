@@ -17,7 +17,7 @@ import Card from "../CardComponent/Card";
 
   return (
     <section className="column__container">
-      <input className="column__container_name-changer" type="text"/>
+      <input className="name-changer column__container_name-changer" type="text"/>
       <p>name of column</p>
       <ul className="flex" id="cards">
         {setCard}

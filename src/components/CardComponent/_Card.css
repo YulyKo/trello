@@ -12,15 +12,4 @@
   -moz-border-radius: .3rem;
 }
 
-.card_name-changer {
-  width: calc(100% - 2rem);
-  padding: .5rem 1rem;
-  border: none;
-  color: #00f;
-  background-color: #E9EbE8;
-  -webkit-box-shadow: inset 0 1px 8px 4px #1CB5E0;
-  -moz-box-shadow: inset 0 1px 8px 4px #1CB5E0;
-  box-shadow: inset 0 1px 8px 4px #1CB5E0;
-}
-
 .card_name {}
