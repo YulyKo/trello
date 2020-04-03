@@ -2,24 +2,25 @@
 /* no var(), because it doesn't supports in many browsers*/
 
 /* generate colors:
-blue: #000046;
+blue: #00F;
 white: #FCFDFF
-light-gray: #9D9599
+light-gray: #FCFDFF
+light-blue: #0078D4
 */
 
 .app{
   height: 100vh;
   transition: 0.5s;
-  background: #000046;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(106deg, #000046, #1CB5E0);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(106deg, #000046, #1CB5E0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #0078d4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(106deg, #0078d4, #1CB5E0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(106deg, #0078d4, #1CB5E0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .text {
   margin: 0;
-  color: #FCFDFF;
   text-align: center;
   font-size: calc(10px + 2vmin);
+  color: #FCFDFF;
 }
 
 @media screen and (max-width: 900px) {
