@@ -1,8 +1,12 @@
 .column__container {
   width: 25rem;
   margin-right: 1rem;
-  padding: 3em 1em;
   background-color: #FFFAFA;
+  
+  padding: 0 0.6rem 0.5rem;
+  min-width: 12rem;
+  overflow-y: auto;
+  flex: 1;
 }
 
 @media screen and (max-width: 900px) {
