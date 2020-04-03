@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from 'react-dom';
 import "./_Column.css"
 import {useState} from "react";
 import Card from "../CardComponent/Card";

@@ -24,7 +24,5 @@ light-blue: #0078D4
 }
 
 @media screen and (max-width: 900px) {
-  .app {
-
-  }
+  .app {}
 }
