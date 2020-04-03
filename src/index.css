@@ -6,3 +6,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
