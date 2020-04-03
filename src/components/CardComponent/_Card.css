@@ -13,9 +13,6 @@
 }
 
 .card_name-changer {
-
-  word-wrap: break-word;
-
   width: calc(100% - 2rem);
   padding: .5rem 1rem;
   border: none;
