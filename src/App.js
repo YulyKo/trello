@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Columns from "./components/ColumnsComponent/Columns";
+import AddingList from "./containers/AddingList";
+import Board from "./components/BoardComponent/Board";
 
 function App() {
   return (
@@ -8,7 +9,10 @@ function App() {
       <header>
         <h1 className="text">Welcome to my test trello</h1>
       </header>
-      <Columns/>
+      <main>
+        <Board/>
+        <AddingList/>
+      </main>
     </div>
   );
 }
