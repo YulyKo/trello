@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import AddingList from "./containers/AddingList";
-import Board from "./components/BoardComponent/Board";
+import List from "./components/ListComponent/List";
+import {connect} from "react-redux";
 
-function App() {
-  return (
-    <div className="app">
-      <header>
-        <h1 className="text">Welcome to my test trello</h1>
-      </header>
-      <main>
-        <Board/>
-        <AddingList/>
-      </main>
-    </div>
-  );
+class App extends Component {
+  render() {
+    const { lists } = this.props;
+
+    return (
+      <div className="app">
+        <header>
+          <h1 className="text">Welcome to my test trello</h1>
+        </header>
+        <main className="flex">
+          {lists.map(list => (
+            <List title={list.title} cards={list.cards}/>
+          ))}
+        </main>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  lists: state.lists,
+});
+
+export default connect(mapStateToProps)(App);

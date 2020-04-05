@@ -7,6 +7,9 @@ white: #FCFDFF
 light-gray: #FCFDFF
 light-blue: #0078D4
 */
+.flex {
+  display: flex;
+}
 
 .app{
   height: 100vh;
