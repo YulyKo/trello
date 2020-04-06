@@ -1,10 +1,11 @@
 import { ACTIONS } from "../actions";
-import { uuid } from "uuidv4";
+import uuid from 'react-uuid';
 
 export const addList = title => {
   return (dispatch, getState) => {
     const boardID = getState().activeBoard;
-    const id = uuid;
+    const id = uuid();
+    console.log('list: ' + id);
     dispatch({
       type: ACTIONS.ADD_LIST,
       payload: { title, boardID, id }

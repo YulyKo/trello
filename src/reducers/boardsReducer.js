@@ -1,6 +1,12 @@
 import { ACTIONS } from "../actions";
 
-const initialState = {};
+const initialState = {
+  "board-0": {
+    id: "board-0",
+    lists: ["list-0"],
+    title: "myboard"
+  }
+};
 
 const boardsReducer = (state = initialState, action) => {
   switch (action.type) {

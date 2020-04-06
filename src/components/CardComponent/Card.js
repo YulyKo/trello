@@ -1,46 +1,10 @@
 import React, { useState } from "react";
 import { Draggable } from "react-beautiful-dnd";
-import Form from "../Form";
+import Form from "../FormComponent/Form";
 import { editCard, deleteCard } from "../../actions";
 import { connect } from "react-redux";
-import Button from "../Button";
+import Button from "../ButtonComponent/Button";
 
-const CardContainer = `
-  margin: 0 0 8px 0;
-  position: relative;
-  max-width: 100%;
-  word-wrap: break-word;
-`;
-
-const EditButton = `
-  position: absolute;
-  display: none;
-  right: 5px;
-  top: 5px;
-  opacity: 0.5;
-  ${CardContainer}:hover & {
-    display: block;
-    cursor: pointer;
-  }
-  &:hover {
-    opacity: 0.8;
-  }
-`;
-
-const DeleteButton = `
-  position: absolute;
-  display: none;
-  right: 5px;
-  bottom: 5px;
-  opacity: 0.5;
-  ${CardContainer}:hover & {
-    display: block;
-    cursor: pointer;
-  }
-  &:hover {
-    opacity: 0.8;
-  }
-`;
 
 const Card = React.memo(({ name, id, listID, index, dispatch }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -80,20 +44,20 @@ const Card = React.memo(({ name, id, listID, index, dispatch }) => {
     return (
       <Draggable draggableId={String(id)} index={index}>
         {provided => (
-          <section className={CardContainer}
+          <section className=""
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             ref={provided.innerRef}
             onDoubleClick={() => setIsEditing(true)}
           >
             <Card>
-              <button className={EditButton}
+              <button className=""
                 onMouseDown={() => setIsEditing(true)}
                 fontSize="small"
               >
                 edit
               </button>
-              <button className={DeleteButton} fontSize="small" onMouseDown={handleDeleteCard}>
+              <button className="" onMouseDown={handleDeleteCard}>
                 delete
               </button>
 

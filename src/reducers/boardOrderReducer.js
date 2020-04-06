@@ -1,6 +1,9 @@
 import { ACTIONS } from "../actions";
+import { uuid } from "uuidv4";
 
-const initialState = [];
+console.log(uuid);
+
+const initialState = ["board-0"];
 
 const boardOrderReducer = (state = initialState, action) => {
   switch (action.type) {

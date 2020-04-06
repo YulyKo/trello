@@ -1,4 +1,4 @@
-.column__container {
+.list__container {
   width: 20rem;
   min-width: 15rem;
   margin-right: 1rem;
@@ -8,8 +8,44 @@
   overflow-y: auto;
 }
 
+.list__container_input {
+  width: 100%;
+  border: none;
+  outline-color: #673fff;
+  border-radius: 3px;
+  margin-bottom: 3px;
+  padding: 5px;
+}
+
+.title-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.list__container_title {
+  transition: background 0.3s ease-in;
+}
+
+.list__container_title:hover {
+  background: #ccc;
+}
+
+.list__container_delete-Button {
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.4;
+}
+
+.list__container_delete-Button:hover {
+   opacity: 0.8;
+ }
+
 @media screen and (max-width: 900px) {
-  .column__container {
+  .list__container {
     margin-right: 0;
     margin-bottom: 1rem;
     width: 100%;

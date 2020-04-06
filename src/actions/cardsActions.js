@@ -1,8 +1,9 @@
 import { ACTIONS } from "../actions";
-import { uuid } from "uuidv4";
+import uuid from 'react-uuid';
 
 export const addCard = (listID, name) => {
-  const id = uuid;
+  const id = uuid();
+  console.log('card: ' + id);
   return {
     type: ACTIONS.ADD_CARD,
     payload: { name, listID, id }

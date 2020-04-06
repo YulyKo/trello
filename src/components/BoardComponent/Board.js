@@ -1,15 +1,12 @@
 import React, { PureComponent } from "react";
-import List from "./ListComponent/List";
+import List from "../ListComponent/List";
 import { connect } from "react-redux";
-import TrelloCreate from "./TrelloCreate";
+import TrelloCreate from "../TrelloCreateComponent/TrelloCreate";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import { sort, setActiveBoard } from "../actions";
+import { sort, setActiveBoard } from "../../actions";
 import { Link } from "react-router-dom";
+import './_Board.css';
 
-const lists_container = {
-  display: "flex",
-  flexDirection: "row",
-};
 
 // TODO: Fix performance issue
 
@@ -55,7 +52,7 @@ class Board extends PureComponent {
         <h2>{board.title}</h2>
         <Droppable droppableId="all-lists" direction="horizontal" type="list">
           {provided => (
-            <div className={lists_container}
+            <div className="lists_container"
               {...provided.droppableProps}
               ref={provided.innerRef}
             >

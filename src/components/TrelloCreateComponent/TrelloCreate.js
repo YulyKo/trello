@@ -1,9 +1,9 @@
 import React from "react";
-import Button from "./Button";
+import Button from "../ButtonComponent/Button";
 import { connect } from "react-redux";
-import { addList, addCard } from "../actions";
-import Form from "./Form";
-import OpenForm from "./OpenForm";
+import { addList, addCard } from "../../actions";
+import Form from "../FormComponent/Form";
+import OpenForm from "../OpenFomComponent/OpenForm";
 
 class TrelloCreate extends React.PureComponent {
   state = {
@@ -17,7 +17,7 @@ class TrelloCreate extends React.PureComponent {
     });
   };
 
-  closeForm = e => {
+  closeForm = () => {
     this.setState({
       formOpen: false
     });
@@ -39,8 +39,6 @@ class TrelloCreate extends React.PureComponent {
       });
       dispatch(addList(text));
     }
-
-    return;
   };
 
   handleAddCard = () => {
@@ -53,36 +51,6 @@ class TrelloCreate extends React.PureComponent {
       });
       dispatch(addCard(listID, name));
     }
-  };
-
-  renderOpenForm = () => {
-    const { list } = this.props;
-
-    const buttonText = list ? "Add another list" : "Add another card";
-    const buttonTextOpacity = list ? 1 : 0.5;
-    const buttonTextColor = list ? "white" : "inherit";
-    const buttonTextBackground = list ? "rgba(0,0,0,.15)" : "inherit";
-
-    const OpenFormButton = `
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      border-radius: 3px;
-      height: 36px;
-      margin-left: 8px;
-      width: 300px;
-      padding-left: 10px;
-      padding-right: 10px;
-      opacity: ${buttonTextOpacity};
-      color: ${buttonTextColor};
-      background-color: ${buttonTextBackground};
-    `;
-
-    return (
-      <div className={OpenFormButton} onClick={this.openForm}>
-        <p style={{ flexShrink: 0 }}>{buttonText}</p>
-      </div>
-    );
   };
 
   render() {
@@ -100,7 +68,7 @@ class TrelloCreate extends React.PureComponent {
       </Form>
     ) : (
       <OpenForm list={list} onClick={this.openForm}>
-        {list ? "Add list" : "Add card"}
+        {list ? "Add another list" : "Add another card"}
       </OpenForm>
     );
   }

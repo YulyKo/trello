@@ -1,45 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { addBoard } from "../actions";
-import BoardThumbnail from "./BoardThumbnail";
-
-const Thumbnails = `
-  flex: 1;
-  height: 50%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-`;
-
-const HomeContainer = `
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-`;
-
-const CreateTitle = `
-  font-size: 48px;
-  color: white;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-`;
-
-const CreateInput = `
-  width: 400px;
-  height: 80px;
-  font-size: 22px;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 3px;
-  border: none;
-  outline-color: blue;
-  box-shadow: 0 2px 4px grey;
-  align-self: center;
-`;
+import { addBoard } from "../../actions";
+import BoardThumbnail from "../BoardThubnailComponent/BoardThumbnail";
+import './_Home.css'
 
 const Home = ({ boards, boardOrder, dispatch }) => {
   // this is the home site that shows you your boards and you can also create a Board here.
@@ -74,8 +38,8 @@ const Home = ({ boards, boardOrder, dispatch }) => {
   const renderCreateBoard = () => {
     return (
       <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
-        <h3 className={CreateTitle}>Create a new Board</h3>
-        <input className={CreateInput}
+        <h3 className="create-title">Create a new Board</h3>
+        <input className="create-input"
           onChange={handleChange}
           value={newBoardTitle}
           placeholder="Your boards title..."
@@ -86,8 +50,8 @@ const Home = ({ boards, boardOrder, dispatch }) => {
   };
 
   return (
-    <div className={HomeContainer}>
-      <div className={Thumbnails}>{renderBoards()}</div>
+    <div className="home_container">
+      <div className="thumbnail">{renderBoards()}</div>
       {renderCreateBoard()}
     </div>
   );

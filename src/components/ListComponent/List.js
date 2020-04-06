@@ -1,52 +1,10 @@
 import React, { useState } from "react";
-import TrelloCreate from "../TrelloCreate";
+import TrelloCreate from "../TrelloCreateComponent/TrelloCreate";
 import { Droppable, Draggable } from "react-beautiful-dnd";
 import { connect } from "react-redux";
 import { editTitle, deleteList } from "../../actions";
 import Card from "../CardComponent/Card";
 
-const ListContainer = `
-  background-color: #dfe3e6;
-  border-radius: 3px;
-  width: 300px;
-  padding: 8px;
-  height: 100%;
-  margin: 0 8px 0 0;
-`;
-
-const StyledInput = `
-  width: 100%;
-  border: none;
-  outline-color: blue;
-  border-radius: 3px;
-  margin-bottom: 3px;
-  padding: 5px;
-`;
-
-const TitleContainer = `
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-`;
-
-const DeleteButton = `
-  cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0.4;
-  &:hover {
-    opacity: 0.8;
-  }
-`;
-
-const ListTitle = `
-  transition: background 0.3s ease-in;
-  ${TitleContainer}:hover & {
-    background: #ccc;
-  }
-`;
 
 const List = ({ title, cards, listID, index, dispatch }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -55,7 +13,7 @@ const List = ({ title, cards, listID, index, dispatch }) => {
   const renderEditInput = () => {
     return (
       <form onSubmit={handleFinishEditing}>
-        <input className={StyledInput}
+        <input className="list__container_input"
           type="text"
           value={listTitle}
           onChange={handleChange}
@@ -89,7 +47,7 @@ const List = ({ title, cards, listID, index, dispatch }) => {
   return (
     <Draggable draggableId={String(listID)} index={index}>
       {provided => (
-        <section className={ListContainer}
+        <section className="list__container"
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
@@ -102,8 +60,8 @@ const List = ({ title, cards, listID, index, dispatch }) => {
                     renderEditInput()
                   ) : (
                     <article onClick={() => setIsEditing(true)}>
-                      <p className={ListTitle}>{listTitle}</p>
-                      <button className={DeleteButton} onClick={handleDeleteList}>
+                      <p className="list__container_title">{listTitle}</p>
+                      <button className="list__container_delete-Button" onClick={handleDeleteList}>
                         delete
                       </button>
                     </article>
