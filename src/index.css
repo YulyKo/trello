@@ -1,5 +1,11 @@
 /* only for tags */
 
+html {
+  background-color: orange;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in;
+}
+
 body {
   margin: 0;
   font-family: 'Baloo Thambi 2', cursive;
