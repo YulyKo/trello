@@ -3,7 +3,7 @@ import './_Button.css';
 
 const Button = ({ children, onClick }) => {
   return (
-    <button className="button" variant="contained" onMouseDown={onClick}>
+    <button className="button" onMouseDown={onClick}>
       {children}
     </button>
   );

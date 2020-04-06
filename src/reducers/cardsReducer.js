@@ -2,7 +2,7 @@ import { ACTIONS } from "../actions";
 
 const initialState = {
   "card-0": {
-    text: "Last Episode",
+    name: "Last Episode",
     id: `card-0`,
     list: "list-0"
   }
@@ -11,10 +11,10 @@ const initialState = {
 const cardsReducer = (state = initialState, action) => {
   switch (action.type) {
     case ACTIONS.ADD_CARD: {
-      const { text, listID, id } = action.payload;
+      const { name, listID, id } = action.payload;
 
       const newCard = {
-        text,
+        name,
         id: `card-${id}`,
         list: listID
       };

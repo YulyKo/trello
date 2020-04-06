@@ -34,8 +34,7 @@ const List = ({ title, cards, listID, index, dispatch }) => {
     setListTitle(e.target.value);
   };
 
-  const handleFinishEditing = e => {
-    // e.preventDefault();
+  const handleFinishEditing = () => {
     setIsEditing(false);
     dispatch(editTitle(listID, listTitle));
   };

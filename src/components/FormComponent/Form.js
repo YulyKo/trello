@@ -9,7 +9,7 @@ const FormComponent = React.memo(
 
     return (
       <div className="container">
-        <form className="form">
+        <div className="form">
           <textarea className="styled-text-area"
             placeholder={placeholder}
             autoFocus
@@ -17,7 +17,7 @@ const FormComponent = React.memo(
             onChange={e => onChange(e)}
             onBlur={closeForm}
           />
-        </form>
+        </div>
         <div className="button_container">
           {children}
           <button onMouseDown={closeForm}>close</button>

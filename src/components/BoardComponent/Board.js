@@ -69,7 +69,8 @@ class Board extends PureComponent {
                       index={index}
                     />
                   );
-                } else return ""
+                }
+                return "";
               })}
               {provided.placeholder}
               <TrelloCreate list />

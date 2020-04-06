@@ -5,7 +5,6 @@ import { editCard, deleteCard } from "../../actions";
 import { connect } from "react-redux";
 import Button from "../ButtonComponent/Button";
 
-
 const Card = React.memo(({ name, id, listID, index, dispatch }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [cardName, setName] = useState(name);
@@ -37,14 +36,13 @@ const Card = React.memo(({ name, id, listID, index, dispatch }) => {
       </Form>
     );
   };
+  /*       open modal window for edit and add info*/
 
   const renderCard = () => {
-
-    /*       open modal window for edit and add info*/
     return (
       <Draggable draggableId={String(id)} index={index}>
         {provided => (
-          <section className=""
+          <section className="card"
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             ref={provided.innerRef}
@@ -53,7 +51,6 @@ const Card = React.memo(({ name, id, listID, index, dispatch }) => {
             <Card>
               <button className=""
                 onMouseDown={() => setIsEditing(true)}
-                fontSize="small"
               >
                 edit
               </button>
